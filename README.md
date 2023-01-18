@@ -8,7 +8,6 @@
 <!-- ABOUT THE PROJECT -->
 <h3 align="left">This Terraform solution creates a Lambda function that starts and stops EC2 instances on a schedule, and also creates EC2 instances.</h3>
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/renatts/EC2-Start-Stop/blob/master/diagrams/diagram.png)
 
 [product-screenshot]: diagrams/diagram.png
 
