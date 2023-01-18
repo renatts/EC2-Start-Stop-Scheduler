@@ -1,7 +1,9 @@
 <a name="readme-top"></a>
 
 <h2 align="left">EC2 Start/Stop Scheduler</h2>
-</div>
+
+[![Terraform Version](https://img.shields.io/badge/terraform-1.x-623CE4.svg?logo=terraform)](https://github.com/hashicorp/terraform/releases)
+
 
 <!-- ABOUT THE PROJECT -->
 <h3 align="left">This Terraform solution creates a Lambda function that starts and stops EC2 instances on a schedule, and also creates EC2 instances.</h3>
