@@ -59,7 +59,7 @@ variable "function_name" {
 
 variable "schedule_expression" {
   type        = string
-  default     = "cron(0 8 ? * MON-FRI *)"
+  default     = "cron(0 9-17 * * 0-4)"
   description = "The schedule expression for the Lambda function"
 }
 

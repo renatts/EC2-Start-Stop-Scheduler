@@ -1,6 +1,12 @@
 terraform {
   required_version = ">= 1.0.0"
 
+  backend "s3" {
+    bucket = "scheduler-tfstate-bucket"
+    key    = "path/to/my/tfstate"
+    region = "eu-central-1"
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -35,10 +41,15 @@ module "lambda_function" {
   schedule_expression = var.schedule_expression
   runtime             = var.runtime
   handler             = var.handler
-  memory_size         = 128
+  memory_size         = 1
   timeout             = 60
   source_code_hash    = filebase64sha256("lambda_function.zip")
   filename            = "lambda_function.zip"
   instance_id         = module.ec2_instance.instance_ids
   role                = module.iam_role.iam_role_arn
+}
+
+resource "aws_s3_bucket" "tfstate_bucket" {
+  bucket = "scheduler-tfstate-bucket"
+  acl    = "private"
 }
